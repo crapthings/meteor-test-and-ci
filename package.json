@@ -1,0 +1,18 @@
+{
+  "name": "meteor-test-and-ci",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "TEST_BROWSER_DRIVER=chrome meteor test --once --driver-package meteortesting:mocha",
+    "test-dev": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chromedriver": "^2.35.0",
+    "selenium-webdriver": "^3.6.0"
+  }
+}
