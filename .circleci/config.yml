@@ -5,9 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8.9.4
     steps:
-      - run: sudo apt-get install xvfb
-      - run: Xvfb :99 -ac &
-      - run: export DISPLAY=:99
+      - run: curl https://gist.githubusercontent.com/ziadoz/3e8ab7e944d02fe872c3454d17af31a5/raw/ff10e54f562c83672f0b1958a144c4b72c070158/install.sh | sh
       - run: curl https://install.meteor.com/ | sh
       - checkout
       - run: meteor npm i
