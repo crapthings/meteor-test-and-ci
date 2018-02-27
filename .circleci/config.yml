@@ -1,22 +1,10 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: jshimko/meteor-launchpad:latest
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
-
+    docker:
+      - image: node/node:8.9.4-slim
     steps:
+      - run: curl https://install.meteor.com/ | sh
       - checkout
-      - curl https://install.meteor.com/ | sh
       - run: meteor npm run test
