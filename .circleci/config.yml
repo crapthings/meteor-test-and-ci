@@ -9,4 +9,5 @@ jobs:
       - run: curl https://install.meteor.com/ | sh
       - checkout
       - run: meteor npm i
-      - run: meteor npm run test
+      - run: meteor npm i --save-dev phantomjs-prebuilt
+      - run: TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package meteortesting:mocha
