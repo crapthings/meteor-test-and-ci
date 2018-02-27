@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: node/8.9.4-slim
+      - image: circleci/node:8.9.4
     steps:
       - run: curl https://install.meteor.com/ | sh
       - checkout
